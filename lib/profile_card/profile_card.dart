@@ -1,145 +1,229 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widget/custom_button.dart';
-
 class ProfileCard extends StatefulWidget {
   const ProfileCard({super.key});
   @override
   State<ProfileCard> createState() => _ProfileCardState();
 }
+
 class _ProfileCardState extends State<ProfileCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffEDF2FA),
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-
-                  child: Card(
-                      color: Colors.white,
-                      child: Padding(
-                          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                child: Card(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: EdgeInsets.all(15),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 20,
+                          ),
                           child: Column(
-                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              Padding(padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 150,
-                                    width: 150,
-                                    child: CircleAvatar(
-                                      backgroundImage: AssetImage("assets/radhesh.jpeg"),
-                                    ),
-                                  ),//profile image,
-                                  SizedBox(height: 5,),
-                                  Text("Radhesh Roy", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23),),
-                                  SizedBox(height: 5,),
-                                  Text("Flutter Developer",style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17, color: Colors.grey),),
-                                  SizedBox(height: 5,),
-                                  Text("A beginner Flutter Developer.Everyday working and learning new topic.",style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14,),),
-                                  SizedBox(height: 10,),
-                                ],
-                              ),),
-                              Padding(padding: EdgeInsets.only(left: 5, right: 5),
-                              child: Divider(),),// Divider
-                              Padding(padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                                child: Column(
+                              SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                    "assets/radhesh.jpeg",
+                                  ),
+                                ),
+                              ), //profile image,
+                              SizedBox(height: 5),
+                              Text(
+                                "Radhesh Roy",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 23,
+                                ),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                "Flutter Developer",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 17,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                "A beginner Flutter Developer.Everyday working and learning new topic.",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 5, right: 5),
+                          child: Divider(),
+                        ), // Divider
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 20,
+                          ),
+                          child: Column(
+                            spacing: 10,
+                            children: [
+                              Row(
                                 spacing: 10,
                                 children: [
-                                  Row(
-                                    spacing: 10,
-                                    children: [
-                                      Icon(Icons.email, size: 20,),
-                                      Text("radheshroy0011@gmail.com", style: TextStyle(fontSize: 15, color: Colors.grey.shade700),)
-                                    ],
+                                  Icon(Icons.email, size: 20),
+                                  Text(
+                                    "radheshroy0011@gmail.com",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey.shade700,
+                                    ),
                                   ),
-                                  Row(
-                                    spacing: 10,
-                                    children: [
-                                      Icon(Icons.phone, size: 20,),
-                                      Text("01789391948", style: TextStyle(fontSize: 15, color: Colors.grey.shade700),)
-                                    ],
-                                  ),
-                                  Row(
-                                    spacing: 15,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      CustomButton(buttonTitle: 'Follow', backgroundColor: Colors.blue, titleColor: Colors.white,),
-                                      CustomButton(buttonTitle: 'Massage', borderColor: Colors.grey,)
-                                    ],
-                                  )
                                 ],
-                              ),)
-                      ])
-                  )
-                      ),
-                ),
-                Row(
-                    spacing: 10,
-                    children: [
-                      Expanded(child: Divider(thickness: 1,)),
-                      Text("Interests",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                      Expanded(child: Divider(thickness: 1,)),
-                    ],
-                  ),
-                GridView.builder(
-                  shrinkWrap: true,
-                  itemCount: 2,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 0.75,
-
-                      crossAxisCount: 2
-                  ),
-                  itemBuilder: (context, index) {
-                    return Card(
-                      color: Colors.white,
-                      child:Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height * 0.10.h,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage("https://thumbs.dreamstime.com/b/beautiful-view-nature-mountains-near-konigssee-lake-bavaria-germany-blue-sky-clouds-97444419.jpg"))
-                                ),
-                              ),//image
-                            SizedBox(height: 10,),
-                            Text("Travel", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp,),),
-                            SizedBox(height: 10,),
-                            Text("Exploring new place around new world", style: TextStyle(fontWeight: FontWeight.w400,color: Colors.grey, fontSize: 9.sp),overflow: TextOverflow.ellipsis, maxLines: 1,),
-                            SizedBox(height: 10,),
-                            Container(
-                              height: 25.h,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(7),
-                                border: Border.all(color: Colors.grey.shade300)
-                                
                               ),
-                              child: Center(
-                                child: Text("View More",style: TextStyle(color: Colors.blue, fontSize: 13, fontWeight: FontWeight.w600),),
+                              Row(
+                                spacing: 10,
+                                children: [
+                                  Icon(Icons.phone, size: 20),
+                                  Text(
+                                    "01789391948",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey.shade700,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            )
-                          ],
+                              Row(
+                                spacing: 15,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomButton(
+                                    buttonTitle: 'Follow',
+                                    backgroundColor: Colors.blue,
+                                    titleColor: Colors.white,
+                                  ),
+                                  CustomButton(
+                                    buttonTitle: 'Massage',
+                                    borderColor: Colors.grey,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                spacing: 10,
+                children: [
+                  Expanded(child: Divider(thickness: 1)),
+                  Text(
+                    "Interests",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Expanded(child: Divider(thickness: 1)),
+                ],
+              ),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 2,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.78,
+                ),
+                itemBuilder: (context, index) {
+                  return Card(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: const DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                    "https://thumbs.dreamstime.com/b/beautiful-view-nature-mountains-near-konigssee-lake-bavaria-germany-blue-sky-clouds-97444419.jpg",
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            "Travel",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15.sp,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            "Exploring new place around new world",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 10.sp,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Container(
+                            height: 32,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(7),
+                              border: Border.all(color: Colors.grey.shade300),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "View More",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    );
-                  },)
-              ],
-            ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
+        ),
       ),
     );
   }
