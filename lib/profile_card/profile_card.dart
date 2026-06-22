@@ -115,14 +115,124 @@ class _ProfileCardState extends State<ProfileCard> {
                                 spacing: 15,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CustomButton(
-                                    buttonTitle: 'Follow',
-                                    backgroundColor: Colors.blue,
-                                    titleColor: Colors.white,
+                                  InkWell(
+                                    onTap:(){
+                                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                          backgroundColor: Colors.grey,
+                                          content: Text("You have followed Radhesh Roy")));
+                                    },
+                                    child: CustomButton(
+                                      buttonTitle: 'Follow',
+                                      backgroundColor: Colors.blue,
+                                      titleColor: Colors.white,
+                                    ),
                                   ),
-                                  CustomButton(
-                                    buttonTitle: 'Massage',
-                                    borderColor: Colors.grey,
+                                  InkWell(
+                                    onTap: (){
+                                      showDialog(
+                                        barrierDismissible: false,
+                                        context:context, builder: (context) {
+                                        return AlertDialog(
+                                          backgroundColor: Colors.white,
+                                          title: Text("Details", style: TextStyle(fontSize: 20.sp),),
+                                          content: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.person, size: 12.sp,),
+                                                  SizedBox(width: 5,),
+                                                  RichText(text: TextSpan(
+                                                      text: "Name: ",
+                                                      style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w700),
+                                                      children: [
+                                                        TextSpan(
+                                                          text: "Radhesh Roy",
+                                                          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
+
+                                                        )
+                                                      ]
+                                                  ))
+                                                ],
+                                              ),
+                                              SizedBox(height: 10,),
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.shopping_bag, size: 12.sp,),
+                                                  SizedBox(width: 5,),
+                                                  RichText(text: TextSpan(
+                                                      text: "Designation: ",
+                                                      style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w700),
+                                                      children: [
+                                                        TextSpan(
+                                                          text: "Flutter Developer",
+                                                          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
+
+                                                        )
+                                                      ]
+                                                  ))
+                                                ],
+                                              ),
+                                              SizedBox(height: 10,),
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.phone, size: 12.sp,),
+                                                  SizedBox(width: 5,),
+                                                  RichText(text: TextSpan(
+                                                      text: "Phone: ",
+                                                      style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w700),
+                                                      children: [
+                                                        TextSpan(
+                                                          text: "01789391948",
+                                                          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
+
+                                                        )
+                                                      ]
+                                                  ))
+                                                ],
+                                              ),
+                                              SizedBox(height: 10,),
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.email_outlined, size: 12.sp,),
+                                                  SizedBox(width: 5,),
+                                                  RichText(text: TextSpan(
+                                                      text: "Email: ",
+                                                      style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w700),
+                                                      children: [
+                                                        TextSpan(
+                                                          text: "radheshroy0011@gmail.com",
+                                                          style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
+
+                                                        )
+                                                      ]
+                                                  ))
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          actions: [
+                                            SizedBox(
+                                              height:30.h,
+                                              width: 70.w,
+                                              child: ElevatedButton(
+                                                  style: ElevatedButton.styleFrom(
+                                                    elevation: 0,
+                                                    overlayColor:Colors.transparent,
+                                                  ),
+                                                  onPressed: (){
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Text("Cancel", style: TextStyle(fontSize: 8.sp),)),
+                                            )
+                                          ],
+                                        );
+                                      },);
+                                    },
+                                    child: CustomButton(
+                                      buttonTitle: 'View Profile',
+                                      borderColor: Colors.grey,
+                                    ),
                                   ),
                                 ],
                               ),
